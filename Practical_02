@@ -1,1 +1,144 @@
+1. Implement the concept of method overriding.   
+
+#include<iostream> 
+
+using namespace std; 
+
+class parent 
+
+{ 
+
+public: 
+
+    void show() 
+
+    { 
+
+        cout << "This is the parent class method." << endl; 
+
+    } 
+
+}; 
+
+class child : public parent   // Inheriting parent 
+
+{ 
+
+public: 
+
+    void show()    // Overriding 
+
+    { 
+
+        cout << "This is the child class method (overridden)." << endl; 
+
+    } 
+
+}; 
+
+  
+
+int main() 
+
+{ 
+
+    child a; 
+
+    a.show();   // Calls child version 
+
+    return 0; 
+
+} 
+
+
+2. Show the use of virtual function  
+
+#include<iostream> 
+
+using namespace std; 
+
+class Base 
+
+{ 
+
+  
+
+public: 
+
+    virtual void display () 
+
+    { 
+
+        cout<< " Display of derived class ." <<endl; 
+
+    } 
+
+}; 
+
+class Derived : public Base 
+
+{ 
+
+  
+
+public : 
+
+    void display() 
+
+    { 
+
+        cout<< "Display of Derived class."<<endl; 
+
+    } 
+
+}; 
+
+int main () 
+
+{ 
+
+  
+
+     Base *ptr; 
+
+     Derived obj; 
+
+     ptr = &obj; 
+
+     ptr->display(); 
+
+     return 0; 
+
+} 
+
+3.Show the implementation of abstract class
+
+#include<iostream> 
+using namespace std; 
+class shape 
+{ 
+public: 
+    virtual void draw() = 0; 
+}; 
+class Circle : public shape 
+{ 
+  public: 
+       void draw() 
+      { 
+          cout<< "Drawing Circle\n"; 
+      } 
+
+}; 
+
+int main () 
+
+{ 
+     shape *s = new Circle(); 
+     s->draw(); 
+     return 0 ; 
+
+} 
+
+ 
+
 
